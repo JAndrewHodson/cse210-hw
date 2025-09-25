@@ -5,25 +5,39 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("What is the magic number? ");
-        int number = int.Parse(Console.ReadLine());
-        int response;
+        Random randomGenerator = new Random();
+        bool play = true;
+        string keepPlaying;
         do
         {
-            Console.Write("What is your guess? ");
-            response = int.Parse(Console.ReadLine());
-            if (response == number)
+
+
+            int number = randomGenerator.Next(1, 100);
+            int response;
+            do
             {
-                Console.WriteLine("You guessed it!");
-            }
-            else if (response > number)
+                Console.Write("What is your guess? ");
+                response = int.Parse(Console.ReadLine());
+                if (response == number)
+                {
+                    Console.WriteLine("You guessed it!");
+                }
+                else if (response > number)
+                {
+                    Console.WriteLine("Lower");
+                }
+                else if (response < number)
+                {
+                    Console.WriteLine("Higher");
+                }
+            } while (response != number);
+
+            Console.WriteLine("Would you like to play again? ");
+            keepPlaying = Console.ReadLine();
+            if (keepPlaying != "yes")
             {
-                Console.WriteLine("Lower");
+                play = false;
             }
-            else if (response < number)
-            {
-                Console.WriteLine("Higher");
-            }
-        } while (response != number);
+        } while (play == true);
     }
 }
