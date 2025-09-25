@@ -8,6 +8,7 @@ class Program
         Random randomGenerator = new Random();
         bool play = true;
         string keepPlaying;
+        int guesses = 0;
         do
         {
 
@@ -18,9 +19,10 @@ class Program
             {
                 Console.Write("What is your guess? ");
                 response = int.Parse(Console.ReadLine());
+                guesses = guesses + 1;
                 if (response == number)
                 {
-                    Console.WriteLine("You guessed it!");
+                    Console.WriteLine($"You guessed it in {guesses} tries!");
                 }
                 else if (response > number)
                 {
@@ -31,7 +33,7 @@ class Program
                     Console.WriteLine("Higher");
                 }
             } while (response != number);
-
+            guesses = 0;
             Console.WriteLine("Would you like to play again? ");
             keepPlaying = Console.ReadLine();
             if (keepPlaying != "yes")
