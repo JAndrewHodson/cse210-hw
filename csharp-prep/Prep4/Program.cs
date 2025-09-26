@@ -13,7 +13,7 @@ class Program
         int minPositive = 99999999;
 
         //Ask user for numbers to add to list
-        Console.WriteLine("Enter a list of positive integers, type 0 when finished.");
+        Console.WriteLine("Enter a list of numbers, type 0 when finished.");
 
         //establishing loop of user inputs
         do
