@@ -4,19 +4,19 @@ public class Journal
 
     public void Display()
     {
-        foreach (Entry entry in _entries)
+        foreach (Entry Entry in _entries)
         {
-            Entry.Display()
+            Entry.Display();
         }
     }
 
     public void Save()
     {
-
+        ;
     }
 
     public void Load()
     {
-
+        ;
     }
 }
