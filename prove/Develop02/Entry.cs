@@ -10,5 +10,6 @@ public class Entry
     {
         Console.WriteLine($"Date: {DateTime} - Prompt: {entryPrompt}");
         Console.WriteLine($"{userResponse}");
+        Console.WriteLine("");
     }
 }

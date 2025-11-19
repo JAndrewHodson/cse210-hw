@@ -4,7 +4,10 @@ public class Journal
 
     public void Display()
     {
-
+        foreach (Entry entry in _entries)
+        {
+            Entry.Display()
+        }
     }
 
     public void Save()
@@ -14,6 +17,6 @@ public class Journal
 
     public void Load()
     {
-        
+
     }
 }
