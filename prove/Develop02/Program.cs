@@ -1,4 +1,6 @@
 using System;
+using System.Reflection.Metadata;
+using System.Security.Cryptography;
 
 class Program
 {
@@ -6,24 +8,49 @@ class Program
 
     static void Main(string[] args)
     { 
-        string index = "";
+        string index1 = "";
+        int index2 = 0;
 
-        while(index != "5")
+        Journal journal = new Journal();
+
+        while(index1 != "5")
         {
+            //Setting up Menu
             Console.WriteLine("Please Select one of the following choices:\n1. Write\n2. Display\n3. Load\n4. Save\n5. Quit");
             Console.WriteLine("What would you like to do?");
-            index = Console.ReadLine();
+            index1 = Console.ReadLine();
+            
 
-            if(index == "1")
+            if(index1 == "1")
             {
-                Console.WriteLine("Write");
-            } else if (index == "2")
+                //creatin new Entry object
+                Entry entry = new Entry();
+
+                //Randomly generating entry prompt for the entry
+                Random rnd = new Random();
+                int index = rnd.Next(EntryPrompts.Count);
+                string entryPrompt = EntryPrompts[index];
+
+                //Retreive DateTime from user device
+                DateTime theCurrentTime = DateTime.Now;
+                string dateText = theCurrentTime.ToShortDateString();
+
+                //Encorporating gathered data into an entry
+                entry._DateTime = dateText;
+                entry._entryPrompt = entryPrompt;
+                Console.WriteLine($"{entryPrompt}");
+                entry._userResponse = Console.ReadLine();
+
+                //adding entry to journal
+                journal._entries.Add(entry);
+
+            } else if (index1 == "2")
             {
-                Console.WriteLine("Display");
-            } else if (index == "3")
+                journal.Display();
+            } else if (index1 == "3")
             {
                 Console.WriteLine("Load");
-            } else if (index == "4")
+            } else if (index1 == "4")
             {
                 Console.WriteLine("Save");
             } else

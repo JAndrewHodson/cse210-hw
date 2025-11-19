@@ -1,15 +1,15 @@
 public class Entry
 {
-    private string entryPrompt = "";
+    public string _entryPrompt = "";
 
-    private string DateTime = "";
+    public string _DateTime = "";
 
-    private string userResponse = "";
+    public string _userResponse = "";
 
     public void Display()
     {
-        Console.WriteLine($"Date: {DateTime} - Prompt: {entryPrompt}");
-        Console.WriteLine($"{userResponse}");
+        Console.WriteLine($"Date: {_DateTime} - Prompt: {_entryPrompt}");
+        Console.WriteLine($"{_userResponse}");
         Console.WriteLine("");
     }
 }
