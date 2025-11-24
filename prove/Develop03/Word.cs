@@ -24,10 +24,11 @@ public class Word
             {
                 Console.Write("_");
             }
+            Console.Write(" ");
         }
         else
         {
-            Console.WriteLine(_word);
+            Console.Write($"{_word} ");
         }
     }
 }
