@@ -9,7 +9,7 @@ class Program
     static void Main(string[] args)
     { 
         string index1 = "";
-        int index2 = 0;
+        // int index2 = 0;
 
         Journal journal = new Journal();
 
@@ -52,7 +52,7 @@ class Program
                 Console.WriteLine("Load");
             } else if (index1 == "4")
             {
-                Console.WriteLine("Save");
+                journal.Save();
             } else
             {
                 Console.WriteLine("Goodbye!");
