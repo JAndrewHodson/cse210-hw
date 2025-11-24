@@ -1,6 +1,8 @@
 using System;
+using System.IO;
 using System.Reflection.Metadata;
 using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
@@ -9,7 +11,6 @@ class Program
     static void Main(string[] args)
     { 
         string index1 = "";
-        // int index2 = 0;
 
         Journal journal = new Journal();
 
@@ -49,7 +50,7 @@ class Program
                 journal.Display();
             } else if (index1 == "3")
             {
-                Console.WriteLine("Load");
+                journal.Load();
             } else if (index1 == "4")
             {
                 journal.Save();
@@ -59,4 +60,6 @@ class Program
             }
         }
     }
+
+    
 }

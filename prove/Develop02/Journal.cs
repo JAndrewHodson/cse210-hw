@@ -17,6 +17,8 @@ public class Journal
         Console.WriteLine($"What would you like to name the file?");
         string filename = Console.ReadLine();
 
+        Console.WriteLine("Writing to file...");
+
         using (StreamWriter outputFile = new StreamWriter(filename))
         {
             foreach (Entry e in _entries)
@@ -28,6 +30,25 @@ public class Journal
 
     public void Load()
     {
-        ;
+        Console.WriteLine("What is the file name?");
+        string filename = Console.ReadLine();
+
+        string[] lines = System.IO.File.ReadAllLines(filename);
+
+        List<Entry> _loadedEntries = new List<Entry>();
+
+        foreach (string line in lines)
+        {
+            string[] parts = line.Split("~|~");
+
+            Entry entry = new Entry();
+
+            entry._DateTime = parts[0];
+            entry._entryPrompt = parts[1];
+            entry._userResponse = parts[2];
+
+            _loadedEntries.Add(entry);
+        }
+        _entries = _loadedEntries;
     }
 }
