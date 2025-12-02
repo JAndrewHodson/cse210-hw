@@ -6,10 +6,16 @@ class Program
     {
         Console.WriteLine("Hello Learning04 World!");
         MathAssignment math = new MathAssignment("Dale", "Derivatives", "7.9", "5-10");
-        var (name, topic) = math.GetSummary();
-        var (section, problems) = math.GetHomeworkList();
 
-        Console.WriteLine($"{name} - {topic}");
-        Console.WriteLine($"Section {section} Problems {problems}");
+        WritingAssignment essay = new WritingAssignment("June","Construction History","Architectural Development Across the Ages");
+
+
+        Console.WriteLine(math.GetSummary());
+        Console.WriteLine(math.GetHomeworkList());
+
+        Console.WriteLine();
+
+        Console.WriteLine(essay.GetSummary());
+        Console.WriteLine(essay.GetWritingInformation());
     }
 }

@@ -3,12 +3,19 @@ using System;
 
 public class Assignment
 {
-    private string _studentName = "Dale";
-    private string _topic = "Derivatives";
+    protected string _studentName;
+    private string _topic;
 
-    public (string, string) GetSummary()
+    public Assignment(string name, string topic)
     {
-        return (_studentName, _topic);
+        _studentName = name;
+        _topic = topic;
+
+    }
+
+    public string GetSummary()
+    {
+        return $"{_studentName} - {_topic}";
     }
 
 }
