@@ -24,7 +24,7 @@ class Activity
         Console.WriteLine();
         Console.WriteLine($"{_description}");
         Console.WriteLine();
-        Console.Write("How long, in seconds, would you like for your session?");
+        Console.Write("How long, in seconds, would you like for your session? ");
 
         _duration = Int32.Parse(Console.ReadLine());
         _startTime = DateTime.Now;
@@ -37,7 +37,7 @@ class Activity
     {
         Console.WriteLine("Well Done!");
         Load();
-        Console.WriteLine($"You have completed {_duration} seconds of {_name}ing Activity");
+        Console.WriteLine($"You have completed {_duration} seconds of the {_name} Activity");
         Load();
     }
 
@@ -47,18 +47,22 @@ class Activity
             
                 for (int i = 0; i < 7; i++)
                 {
-                   Console.Write("+");
-
+                Console.Write("+");
                 Thread.Sleep(500);
-
                 Console.Write("\b"); // Erase the + character
-                Console.Write("x"); // Replace it with the - character 
 
+
+                Console.Write("x"); // Replace it with the - character 
                 Thread.Sleep(500);
                 Console.Write("\b");
                 }
                 Console.WriteLine();
             
+    }
+
+    public DateTime GetEndTime()
+    {
+        return _endTime;
     }
     
 }
