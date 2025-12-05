@@ -8,13 +8,18 @@ class Program
         bool proceed = true;
         string index;
 
+        int breaths = 0;
+        int reflections = 0;
+        int lists = 0;
+
         while (proceed)
         {
             Console.WriteLine("Menu Options");
             Console.WriteLine("1. Start Breathing Activity");
             Console.WriteLine("2. Start Reflecting Activity");
             Console.WriteLine("3. Start Listing Activity");
-            Console.WriteLine("4. Quit");
+            Console.WriteLine("4. History Report");
+            Console.WriteLine("5. Quit");
             Console.Write("Select a choice from the menu: ");
 
             index = Console.ReadLine();
@@ -37,6 +42,8 @@ class Program
 
                 Console.Clear();
 
+                breaths = breaths + 1;
+
             }else if (index == "2")
             {
                 Console.Clear();
@@ -53,6 +60,8 @@ class Program
                 reflection.Outro();
 
                 Console.Clear();
+
+                reflections = reflections + 1;
 
             }else if (index == "3")
             {
@@ -71,9 +80,16 @@ class Program
 
                 Console.Clear();
 
-            }else if (index == "4")
+                lists = lists + 1;
+
+            }else if (index == "5")
             {
                 proceed = false;
+            }else if (index == "4")
+            {
+                Console.WriteLine($"Completed Breathing Activities: {breaths}");
+                Console.WriteLine($"Completed Reflection Activities: {reflections}");
+                Console.WriteLine($"Completed Listing Activities: {lists}");
             }
             else
             {
