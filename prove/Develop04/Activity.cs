@@ -3,6 +3,7 @@ using System.Security.Cryptography.X509Certificates;
 
 class Activity
 {
+    static Random random = new Random();
     private string _name;
     private int _duration;
     private string _description;
@@ -75,6 +76,12 @@ class Activity
         }
         Console.Write(" ");
         Console.WriteLine();
+    }
+
+        public void PrintPrompt(List<string> prompts)
+    {
+        int index = random.Next(prompts.Count);
+        Console.WriteLine($"---{prompts[index]}---");
     }
     
 }
