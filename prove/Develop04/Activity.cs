@@ -10,11 +10,11 @@ class Activity
     private DateTime _endTime;
 
 
-    public Activity(string name, string description, DateTime start)
+    public Activity(string name, string description)
     {
         _name = name;
         _description = description;
-        _startTime = start;
+        _startTime = DateTime.Now;
 
     }
 
