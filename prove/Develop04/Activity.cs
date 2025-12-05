@@ -14,7 +14,6 @@ class Activity
     {
         _name = name;
         _description = description;
-        _startTime = DateTime.Now;
 
     }
 
@@ -35,17 +34,17 @@ class Activity
 
     public void Outro()
     {
-        Console.WriteLine("Well Done!");
-        Load();
-        Console.WriteLine($"You have completed {_duration} seconds of the {_name} Activity");
-        Load();
+        Console.Write("Well Done! ");
+        Load(5);
+        Console.Write($"You have completed {_duration} seconds of the {_name} Activity ");
+        Load(5);
     }
 
-    static void Load()
+    public void Load(int time)
     {
         
             
-                for (int i = 0; i < 7; i++)
+                for (int i = 0; i < time; i++)
                 {
                 Console.Write("+");
                 Thread.Sleep(500);
@@ -56,6 +55,7 @@ class Activity
                 Thread.Sleep(500);
                 Console.Write("\b");
                 }
+                Console.Write(" ");
                 Console.WriteLine();
             
     }
@@ -63,6 +63,18 @@ class Activity
     public DateTime GetEndTime()
     {
         return _endTime;
+    }
+
+        public void Wait(int interval)
+    {
+        for (int i = interval; i > 0; i--)
+        {
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b");
+        }
+        Console.Write(" ");
+        Console.WriteLine();
     }
     
 }

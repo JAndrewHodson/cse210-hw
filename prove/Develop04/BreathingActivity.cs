@@ -24,16 +24,6 @@ class BreathingActivity : Activity
         }
     }
 
-    public void Wait(int interval)
-    {
-        for (int i = interval; i > 0; i--)
-        {
-            Console.Write(i);
-            Thread.Sleep(1000);
-            Console.Write("\b");
-        }
-        Console.Write(" ");
-        Console.WriteLine();
-    }
+
 }
 

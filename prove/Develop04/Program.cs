@@ -38,7 +38,21 @@ class Program
 
             }else if (index == "2")
             {
-                //reflect here
+                Console.Clear();
+
+                ReflectingActivity reflection = new ReflectingActivity("Reflecting", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.");
+                reflection.Introduction();
+
+                Console.Clear();
+
+                reflection.Reflect(reflection.GetEndTime());
+
+                Console.Clear();
+
+                reflection.Outro();
+
+                Console.Clear();
+
             }else if (index == "3")
             {
                 //list here
