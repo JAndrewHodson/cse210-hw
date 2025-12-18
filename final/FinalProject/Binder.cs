@@ -2,11 +2,22 @@ using System.Reflection.PortableExecutable;
 
 public class Binder
 {
-    protected List<Character> _characters;
+    private List<Character> _characters = [];
+
+    public Binder()
+    {
+        _characters = [];
+    }
 
     public void List()
     {
-        
+        int index = 1;
+        foreach (Character character in _characters)
+        {
+            string data = character.List();
+            Console.WriteLine($"{index}. {data}");
+            index = index + 1;
+        }
     }
 
     public Character GetCharacter(int index)

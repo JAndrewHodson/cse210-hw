@@ -1,16 +1,20 @@
 public class Spell
 {
     private string _name;
-    private int _level;
-    private int _damage;
-    private string _damageType;
+    private string _description;
+    private int _spellLevel;
+    public Spell(string name, string description, int level)
+    {
+        _name = name;
+        _description = description;
+        _spellLevel = level;
+    }
 
     public void Display()
     {
-        
-    }
-    public void Cast()
-    {
-        
+        Console.WriteLine("");
+        Console.WriteLine($"{_name}");
+        Console.WriteLine($"A {_spellLevel} level spell.");
+        Console.WriteLine($"{_description}");
     }
 }

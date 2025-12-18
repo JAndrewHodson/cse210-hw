@@ -15,26 +15,21 @@ public class Character
 
     public void Display()
     {
-        
+        Console.WriteLine("");
+        Console.WriteLine($"Name: {_name}");
+        Console.WriteLine($"Health: {_health}");
+        _class.Display();
     }
 
     public string List()
     {
-        return($"{_name}, {_class.List}");
+        return $"{_name}, {_class.List()}";
     }
 
-    public void ShortRest()
+    public void LevelUp()
     {
-        
+        _class.LevelUp();
     }
 
-    public void LongRest()
-    {
-        
-    }
 
-    public void Damage()
-    {
-        
-    }
 }
