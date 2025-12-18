@@ -108,7 +108,7 @@ class Program
                     Console.WriteLine("   2. Short Rest");
                     Console.WriteLine("   3. Long Rest");
                     Console.WriteLine("   4. Took Damage");
-                    index1
+                    index1 = int.Parse(Console.ReadLine());
                 }
             }else if (index == 4)
             {
