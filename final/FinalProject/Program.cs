@@ -20,7 +20,7 @@ class Program
             Console.WriteLine("");
             Console.WriteLine("Welcome to your binder!");
             Console.WriteLine("   1. Create Character");
-            Console.WriteLine("   2. View Characters");
+            Console.WriteLine("   2. View Character");
             Console.WriteLine("   3. Use Character");
             Console.WriteLine("   4. Quit");
                 Console.Write("Please select an option from the menu. ");
@@ -75,7 +75,22 @@ class Program
 
             }else if (index == 2)
             {
-                //list
+                //look at a character
+
+                //list all characters
+                userBinder.List();
+                Console.WriteLine("");
+
+                //pick a specific character to look at
+                Console.WriteLine("");
+                Console.WriteLine("Which character would you like to look at?");
+                Console.Write("(please enter the number to the left of the character): ");
+                index1 = int.Parse(Console.ReadLine());
+
+                userBinder.GetCharacter(index1).Display();
+                Console.WriteLine("Press Enter to return to main menu");
+                Console.ReadLine();
+
             }else if (index == 3)
             {
                 //display of characters to choose from the make active
@@ -87,7 +102,13 @@ class Program
                 //sub-menu of things to do with active character
                 while (characterActive)
                 {
-                    
+                    Console.WriteLine("");
+                    Console.WriteLine($"");
+                    Console.WriteLine("   1. Leveled Up");
+                    Console.WriteLine("   2. Short Rest");
+                    Console.WriteLine("   3. Long Rest");
+                    Console.WriteLine("   4. Took Damage");
+                    index1
                 }
             }else if (index == 4)
             {
